@@ -22,13 +22,13 @@
 		</thead>
 		<tbody>
 			<tr v-if="hasPreviousItems" class="pagination-controls">
-				<td :colspan="columns.length">
+				<td :colspan="columns ? columns.length : 2">
 					<a href="#" @click="showPreviousItems">Show {{previousItemsCount}} previous</a>
 				</td>
 			</tr>
 			<slot name="body" :items="shownItems"></slot>
 			<tr v-if="hasNextItems" class="pagination-controls">
-				<td :colspan="columns.length">
+				<td :colspan="columns ? columns.length : 2">
 					<a href="#" @click="showNextItems">Show {{nextItemsCount}} more</a>
 				</td>
 			</tr>

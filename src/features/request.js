@@ -292,6 +292,8 @@ export default class Request
 	}
 
 	processViews(data) {
+		return this.processTimeline(data) // needs fallback to the old data format
+
 		if (! (data instanceof Object)) return []
 
 		return Object.values(data).filter(view => view.data instanceof Object).map(view => view.data)
